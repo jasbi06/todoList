@@ -1,0 +1,67 @@
+{
+  "name": "usuario",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "apellidos": {
+      "type": "string",
+      "required": true
+    },
+    "realm": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "emailVerified": {
+      "type": "boolean",
+      "default": true
+    },
+    "verificationToken": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "crear"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

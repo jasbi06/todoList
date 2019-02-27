@@ -1,0 +1,49 @@
+{
+  "name": "Todo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "isComplete": {
+      "type": "boolean",
+      "default": true
+    },
+    "usuarioId": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "todos": {
+      "type": "hasMany",
+      "model": "usuario",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+  }
+

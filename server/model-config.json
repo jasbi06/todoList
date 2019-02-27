@@ -34,5 +34,13 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Todo": {
+    "dataSource": "lista",
+    "public": true
+  },
+  "usuario": {
+    "dataSource": "lista",
+    "public": true
   }
 }
